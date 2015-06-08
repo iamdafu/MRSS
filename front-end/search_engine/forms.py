@@ -1,12 +1,25 @@
 from django import forms
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, Field
+from crispy_forms.bootstrap import FieldWithButtons, StrictButton
 
 class SearchWordForm(forms.Form):
-    search_word = forms.CharField(max_length=200)
+    search_word = forms.CharField(
+            label = "search word",
+            max_length = 200,
+            required = True,
+            widget = forms.TextInput(attrs={'placeholder':"Please input some symptom ..."}),
+            )
 
-class NameForm(forms.Form):
-    your_name = forms.CharField(label='Your name', max_length=100)
-
-class ContactForm(forms.Form):
-    subject = forms.CharField()
-    email = forms.EmailField(required=False)
-    message = forms.CharField()
+    def __init__(self, *args, **kwargs):
+        super(SearchWordForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_id = 'searchWordFormId'
+        self.helper.form_method = 'post'
+        # self.helper.form_action = 'get_recommendation'
+        self.helper.form_action = '/search_engine/results.html/'
+        self.helper.layout = Layout(
+            # Field('search_word', placeholder="Please ..."),
+            FieldWithButtons('search_word', StrictButton('<span class="glyphicon glyphicon-search"></span>', type='submit', css_class='btn-default')),
+        )
+        self.helper.form_show_labels = False

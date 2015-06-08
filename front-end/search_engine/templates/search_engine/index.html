@@ -1,5 +1,4 @@
 {% load staticfiles %}
-{% load bootstrap %}
 {% load crispy_forms_tags %}
 
 <!DOCTYPE html>
@@ -50,21 +49,8 @@
     <div class="container main">
         <h1 class="heading">MRRS</h1>
         <br />
-
         <div class="col-lg-9 col-center">
-          <form role="form" action="/get_search_word/" method="post">
-            {{ form|crispy }}
-            <!-- <div class="form-group input-group"> -->
-            <!--   <input id="search_word" type="text" class="form-control" -->
-            <!--   placeholder="Please input some symptoms ..." -->
-            <!--   value="{{ current_search_word }}"> -->
-            <!--   <span class="input-group-btn"> -->
-            <!--     <button class="btn btn-default" type="submit"> -->
-            <!--       <span class="glyphicon glyphicon-search"></span> -->
-            <!--     </button> -->
-            <!--   </span> -->
-            <!-- </div><1!-- /input-group --1> -->
-          </form>
+          {% crispy form %}
         </div><!-- /.col-lg-9 -->
     </div>
 
