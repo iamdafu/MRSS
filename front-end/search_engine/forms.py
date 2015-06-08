@@ -16,8 +16,8 @@ class SearchWordForm(forms.Form):
         self.helper = FormHelper()
         self.helper.form_id = 'searchWordFormId'
         self.helper.form_method = 'post'
-        # self.helper.form_action = 'get_recommendation'
-        self.helper.form_action = '/search_engine/results.html/'
+        self.helper.form_action = '/search_engine/get_recommendation/'
+        # self.helper.form_action = '/search_engine/results.html/'
         self.helper.layout = Layout(
             # Field('search_word', placeholder="Please ..."),
             FieldWithButtons('search_word', StrictButton('<span class="glyphicon glyphicon-search"></span>', type='submit', css_class='btn-default')),
