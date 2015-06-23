@@ -38,6 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'sorting_bootstrap',
+    'django_tables2',
     'search_engine',
     'register',
 )

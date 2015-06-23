@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
 
-from .models import SearchWord
+from .models import SearchWord, Recommendation
 from .forms import SearchWordForm
 
 def index(request):
@@ -15,16 +15,17 @@ def get_recommendation(request):
     if request.method == "POST":
         form = SearchWordForm(request.POST)
         if form.is_valid():
-            search_word = form.cleaned_data['search_word']
+            symptom = form.cleaned_data['search_word']
+            search_symptom = SearchWord.objects.get(search_word_text=symptom)
 
             # return HttpResponseRedirect("search_engine/results.html")
             return render(request, "search_engine/results.html",
-                    {"search_word": search_word})
+                    { "recommendation":
+                        Recommendation.objects.filter(search_word=search_symptom)})
     else:
         form = SearchWordForm()
 
-    return render(request, "search_engine/index.html", {"form": form,
-        "search_word": search_word})
+    return render(request, "search_engine/index.html", {"form": form})
 
 def results(request, search_word):
     return HttpResponse("You're searching word %s." % search_word)

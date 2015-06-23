@@ -22,3 +22,9 @@ body {
   vertical-align: middle;
   float: none;
 }
+
+.result {
+  padding-top: 50px;
+  text-align: center;
+  /* color:green */
+}

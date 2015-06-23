@@ -4,9 +4,9 @@ from django.db import models
 
 import datetime
 
-class User(models.Model):
+# class User(models.Model):
 # leave it to the future
-    pass
+    # pass
 
     # user_name = models.CharField(max_length=20)
     # email = models.CharField(max_length=20)
