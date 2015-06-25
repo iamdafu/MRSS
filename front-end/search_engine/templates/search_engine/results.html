@@ -15,10 +15,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'search_engine/bootstrap-3.3.4-dist/css/bootstrap.min.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'search_engine/bootstrap-3.3.4-dist/css/sticky-footer.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'search_engine/style.css' %}" />
-
-    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
     <link rel="stylesheet" href="{{ STATIC_URL }}django_tables2/themes/paleblue/css/screen.css" />
-    <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
 
     <!-- Bootstrap core CSS -->
 
@@ -48,57 +45,8 @@
     </nav>
 
     <!-- <div class="container main"> -->
-    <div class="container">
-      <div class="result">
-        {% render_table recommendation %}
-      <!-- <table id="recommendation" class="table table-striped" > -->
-      <!--   <thead> -->
-      <!--     <tr> -->
-      <!--       <th>图片</th> -->
-      <!--       <th>身体部位</th> -->
-      <!--       <th>简介</th> -->
-      <!--       <th>发病原因</th> -->
-      <!--       <th>诊断</th> -->
-      <!--       <th>浏览次数</th> -->
-      <!--       <th>评论数</th> -->
-      <!--       <th>收藏数</th> -->
-      <!--       <th>相关疾病信息</th> -->
-      <!--       <th>相关检查</th> -->
-      <!--       <th>相关药品</th> -->
-      <!--     </tr> -->
-      <!--   </thead> -->
-      <!--   <tbody> -->
-      <!--     <tr> -->
-      <!--       <td>img</td> -->
-      <!--       <td>place</td> -->
-      <!--       <td>summary</td> -->
-      <!--       <td>cause</td> -->
-      <!--       <td>detailText</td> -->
-      <!--       <td>count</td> -->
-      <!--       <td>rcount</td> -->
-      <!--       <td>fxount</td> -->
-      <!--       <td>disease</td> -->
-      <!--       <td>check</td> -->
-      <!--       <td>drug</td> -->
-      <!--     </tr> -->
-      <!--   </tbody> -->
-      <!--   <tbody> -->
-      <!--     <tr> -->
-      <!--       <td>img1</td> -->
-      <!--       <td>place1</td> -->
-      <!--       <td>summary1</td> -->
-      <!--       <td>cause1</td> -->
-      <!--       <td>detailText1</td> -->
-      <!--       <td>count1</td> -->
-      <!--       <td>rcount1</td> -->
-      <!--       <td>fxount1</td> -->
-      <!--       <td>disease1</td> -->
-      <!--       <td>check1</td> -->
-      <!--       <td>drug1</td> -->
-      <!--     </tr> -->
-      <!--   </tbody> -->
-      <!-- </table> -->
-      </div>
+    <div class="container result">
+      {% render_table table %}
     </div>
 
     <footer class="footer">
@@ -116,10 +64,5 @@
     <script src="bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="index/ie10-viewport-bug-workaround.js"></script>
-    <script>
-$(document).ready(function(){
-  $('#recommendation').dataTable();
-});
-    </script>
   </body>
 </html>

@@ -15,7 +15,7 @@ class SearchWordForm(forms.Form):
         super(SearchWordForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_id = 'searchWordFormId'
-        self.helper.form_method = 'post'
+        self.helper.form_method = 'get'
         self.helper.form_action = '/search_engine/get_recommendation/'
         # self.helper.form_action = '/search_engine/results/'
         self.helper.layout = Layout(

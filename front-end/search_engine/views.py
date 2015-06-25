@@ -4,24 +4,33 @@ from django.shortcuts import render
 
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
+from django_tables2 import RequestConfig
 
 from .models import SearchWord, Recommendation
 from .forms import SearchWordForm
+from .tables import RecommendationTable
 
 def index(request):
     return render(request, 'search_engine/index.html', {'form': SearchWordForm()})
 
 def get_recommendation(request):
-    if request.method == "POST":
-        form = SearchWordForm(request.POST)
+    if request.method == "GET":
+        form = SearchWordForm(request.GET)
         if form.is_valid():
             symptom = form.cleaned_data['search_word']
-            search_symptom = SearchWord.objects.get(search_word_text=symptom)
+            search_symptom = SearchWord.objects.filter(search_word_text=symptom)
+            # if search_symptom:
+            #     recommendation = Recommendation.objects.filter(search_word=search_symptom)
 
-            # return HttpResponseRedirect("search_engine/results.html")
+            #     return render(request, "search_engine/results.html",
+            #             { "recommendation": recommendation})
+            # else:
+            #     return render(request, "search_engine/index.html", {"form": form})
+            table = RecommendationTable(Recommendation.objects.filter(search_word=search_symptom))
+            RequestConfig(request).configure(table)
+
             return render(request, "search_engine/results.html",
-                    { "recommendation":
-                        Recommendation.objects.filter(search_word=search_symptom)})
+                    { "table": table})
     else:
         form = SearchWordForm()
 
