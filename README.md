@@ -27,6 +27,13 @@ sudo pip install django
 sudo pacman -S python-psycopg2
 ```
 
+### 3. other python library
+
+```sh
+cd MRRS/front-end
+sudo pip install pip.txt
+```
+
 ## Run
 
 ```sh
