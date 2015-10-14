@@ -2,12 +2,10 @@
 
 A Medical Registration Recommendaion System
 
----
-
 ## Description
 
 Now I only implement the front-end. If you type something in the search box,
-the web will return a table with results. A naive project:)
+the web will return a table with results. A naive project @_@
 
 ## Installation
 
@@ -21,18 +19,19 @@ sudo pip install django
 
 #### 2.1 [Install PostgreSQL](https://bibaijin.github.io/homepage/technology/postgresql.md)
 
+#### 2.2 Create table
 ```sh
 su -i -u postgres
-create MRRS_db
+create MRRS_DB
 ```
 
-#### 2.2 Python's interface library with PostgreSQL
+#### 2.3 Python's interface library with PostgreSQL
 
 ```sh
 sudo pacman -S python-psycopg2
 ```
 
-### 3. other python library
+### 3. Other python library
 
 ```sh
 cd MRRS/front-end
