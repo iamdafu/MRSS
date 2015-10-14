@@ -21,6 +21,11 @@ sudo pip install django
 
 #### 2.1 [Install PostgreSQL](https://bibaijin.github.io/homepage/technology/postgresql.md)
 
+```sh
+su -i -u postgres
+create MRRS_db
+```
+
 #### 2.2 Python's interface library with PostgreSQL
 
 ```sh
