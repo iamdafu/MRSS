@@ -1,0 +1,32 @@
+body {
+  padding-top: 50px;
+  height: 100%;
+}
+
+.main {
+  padding:150px 20px;
+  text-align: center;
+}
+
+.heading {
+  font-size: 350%;
+}
+
+.col-center {
+  float: none;
+  margin: 0 auto;
+}
+
+.vcenter {
+  display: table;
+  vertical-align: middle;
+  float: none;
+}
+
+.result {
+  padding-top: 50px;
+  text-align: center;
+  /* color:green */
+}
+
+/* table .result */
